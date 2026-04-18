@@ -1,0 +1,972 @@
+[
+    {
+        "timestamp": "2026-04-18T18:41:03.153704",
+        "session_id": "31f022eb-c178-464d-bc9a-9d3f3b8e725f",
+        "caller_number": "+12295080565",
+        "call_sid": "CA8ae1b617366db35f445dea8db3a82804",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Welcome to our restaurant. Can you please tell me if you would like to place an order for pickup or delivery?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "It seems like you're ready to order. Unfortunately, our menu is currently not available. Let me check if I can retrieve it for you. Can you please wait for a moment?"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-18T18:45:48.069214",
+        "session_id": "e6e99343-eb2e-4489-be5b-345f9e34e56d",
+        "caller_number": "+12295080565",
+        "call_sid": "CA8a77be2b7ca66f17ddac93211ad1aa8b",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Welcome to our restaurant. What type of order would you like to place, pickup or delivery?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "To start your order, would you like to order a pickup or delivery?"
+            },
+            {
+                "role": "user",
+                "content": "i i need to place an order for two pizzas"
+            },
+            {
+                "role": "assistant",
+                "content": "We have three signature pizza options: BBQ Chicken Blast, Classic Margherita, and The Meat Monster. Which two pizzas would you like to order?"
+            },
+            {
+                "role": "user",
+                "content": "but let me get a medium barbecue chicken box"
+            },
+            {
+                "role": "assistant",
+                "content": "I think there may be a misunderstanding. We don't have a \"medium barbecue chicken box\" on our menu. However, we do have a BBQ Chicken Blast pizza. Would you like to order the BBQ Chicken Blast pizza, and if so, would you like to add any add-ons such as Extra Cheese, Jalapenos, or Mushrooms to it?"
+            },
+            {
+                "role": "user",
+                "content": "so we wait"
+            },
+            {
+                "role": "assistant",
+                "content": "Let's get back to your order. You mentioned you wanted to order two pizzas, and then you mentioned the BBQ Chicken Blast. To confirm, would you like to order one BBQ Chicken Blast pizza, and if so, what would you like to be your second pizza?"
+            },
+            {
+                "role": "user",
+                "content": "what"
+            },
+            {
+                "role": "assistant",
+                "content": "Let's take a look at our menu again. We have three signature pizza options: BBQ Chicken Blast, Classic Margherita, and The Meat Monster. Which one would you like to choose as your second pizza?"
+            },
+            {
+                "role": "user",
+                "content": "tell me"
+            },
+            {
+                "role": "assistant",
+                "content": "We have the following options for your second pizza: \n\n1. Classic Margherita - Fresh tomatoes, mozzarella, and basil for $10.0\n2. The Meat Monster - Beef pepperoni, sausage, and smoked chicken for $14.0\n\nWhich one of these two options sounds good to you?"
+            },
+            {
+                "role": "user",
+                "content": "tell me"
+            },
+            {
+                "role": "assistant",
+                "content": "You've already chosen the BBQ Chicken Blast as one of your pizzas. For your second pizza, would you like to choose the Classic Margherita or The Meat Monster?"
+            },
+            {
+                "role": "user",
+                "content": "yes what is my data"
+            },
+            {
+                "role": "assistant",
+                "content": "You've chosen two pizzas: \n\n1. BBQ Chicken Blast\n2. ? (You still need to choose between Classic Margherita and The Meat Monster)\n\nPlease respond with the name of the second pizza you'd like to choose."
+            },
+            {
+                "role": "user",
+                "content": "yeah addex plus two"
+            },
+            {
+                "role": "assistant",
+                "content": "I think there may be a misunderstanding. I didn't quite catch what you meant by \"addex plus two\". Could you please clarify which pizza you'd like to choose as your second pizza: Classic Margherita or The Meat Monster?"
+            },
+            {
+                "role": "user",
+                "content": "and i did it by the first time"
+            },
+            {
+                "role": "assistant",
+                "content": "I think there may be a misunderstanding. You had chosen the BBQ Chicken Blast as one of your pizzas, but you still needed to choose a second pizza. You mentioned \"addex plus two\", but I'm not sure what that refers to. Let's start fresh. Would you like to choose the Classic Margherita or The Meat Monster as your second pizza?"
+            },
+            {
+                "role": "user",
+                "content": "okay"
+            },
+            {
+                "role": "assistant",
+                "content": "Let's confirm your order. You've chosen the BBQ Chicken Blast as one of your pizzas. For your second pizza, I'll ask again: would you like to choose the Classic Margherita or The Meat Monster?"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-18T19:12:19.961413",
+        "session_id": "2f4b2c14-8104-4da3-a1c6-703b2687f8c0",
+        "caller_number": "+12295080565",
+        "call_sid": "CA75c2b4b676a34831409a640478192bc5",
+        "confirmed": true,
+        "final_order": {
+            "items": [
+                {
+                    "name": "BBQ Chicken Blast",
+                    "quantity": 1
+                },
+                {
+                    "name": "Classic Margherita",
+                    "quantity": 1
+                }
+            ],
+            "order_type": "pickup"
+        },
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Welcome to our restaurant. What type of order would you like to place, pickup or delivery?"
+            },
+            {
+                "role": "user",
+                "content": "hi i need to place an order for two pizzas please"
+            },
+            {
+                "role": "assistant",
+                "content": "We have three signature pizzas to choose from: BBQ Chicken Blast, Classic Margherita, and The Meat Monster. Which two pizzas would you like to order?"
+            },
+            {
+                "role": "user",
+                "content": "but"
+            },
+            {
+                "role": "assistant",
+                "content": "It seems like you were about to say something. Could you please tell me which pizzas you're interested in or if you need more information about our menu?"
+            },
+            {
+                "role": "user",
+                "content": "let me get a medium service with you"
+            },
+            {
+                "role": "assistant",
+                "content": "I think there might be some confusion. We don't have a \"medium service\" on our menu. We have Signature Pizzas and Pizza Add-Ons. Could you please tell me which Signature Pizza you would like to order, such as BBQ Chicken Blast, Classic Margherita, or The Meat Monster?"
+            },
+            {
+                "role": "user",
+                "content": "okay"
+            },
+            {
+                "role": "assistant",
+                "content": "Let's start with your first pizza. Would you like to order the BBQ Chicken Blast, the Classic Margherita, or The Meat Monster?"
+            },
+            {
+                "role": "user",
+                "content": "give me a barbecue chicken box"
+            },
+            {
+                "role": "assistant",
+                "content": "I think you might be looking for the BBQ Chicken Blast pizza. I'll add that to your order. So, you've got one BBQ Chicken Blast pizza so far. Would you like to add any Pizza Add-Ons to it, such as Extra Cheese, Jalapenos, or Mushrooms?"
+            },
+            {
+                "role": "user",
+                "content": "yes"
+            },
+            {
+                "role": "assistant",
+                "content": "You'd like to add some add-ons to your BBQ Chicken Blast pizza. Which one would you like to add: Extra Cheese, Jalapenos, or Mushrooms?"
+            },
+            {
+                "role": "user",
+                "content": "yeah i don't actually"
+            },
+            {
+                "role": "assistant",
+                "content": "So you'd like to stick with the standard BBQ Chicken Blast pizza, no add-ons. You mentioned earlier you wanted to order two pizzas. What would you like your second pizza to be: Classic Margherita or The Meat Monster?"
+            },
+            {
+                "role": "user",
+                "content": "extra keys"
+            },
+            {
+                "role": "assistant",
+                "content": "I think there might be some confusion. We don't have \"extra keys\" on our menu. We have Signature Pizzas and Pizza Add-Ons. You've already ordered one BBQ Chicken Blast pizza. For your second pizza, would you like to order the Classic Margherita or The Meat Monster?"
+            },
+            {
+                "role": "user",
+                "content": "i want the nine inch classic margarita"
+            },
+            {
+                "role": "assistant",
+                "content": "Our Classic Margherita pizza is a great choice. However, I should let you know that our menu doesn't specify the size of the pizza as 9 inches. We'll assume you'd like to order a Classic Margherita pizza as your second pizza. So, to recap, you've got two pizzas: one BBQ Chicken Blast and one Classic Margherita. Is that correct?"
+            },
+            {
+                "role": "user",
+                "content": "yes one fifty one"
+            },
+            {
+                "role": "assistant",
+                "content": "I think there might be some confusion with the price. The total cost of your order will depend on the prices of the pizzas. The BBQ Chicken Blast is $12.00 and the Classic Margherita is $10.00. So, the total comes out to be $22.00. Would you like to proceed with the order as pickup or delivery?"
+            },
+            {
+                "role": "user",
+                "content": "yes"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "2ve0dp8j7",
+                        "type": "function",
+                        "function": {
+                            "name": "confirm_and_submit_order",
+                            "arguments": "{\"items\":[{\"name\":\"BBQ Chicken Blast\",\"quantity\":1},{\"name\":\"Classic Margherita\",\"quantity\":1}],\"order_type\":\"pickup\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "2ve0dp8j7",
+                "content": "Order confirmed and submitted successfully to backend."
+            },
+            {
+                "role": "assistant",
+                "content": "Your order has been confirmed and submitted. You've ordered one BBQ Chicken Blast pizza and one Classic Margherita pizza for pickup. The total comes out to be $22.00. We'll have your order ready for you. Thank you for ordering with us!"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-18T20:09:21.057260",
+        "session_id": "04d4eb43-e1bb-4745-b028-84daed041a67",
+        "caller_number": "+12295080565",
+        "call_sid": "CA094db1279ede79945a850aae877408cb",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "What kind of pizza can I get for you?"
+            },
+            {
+                "role": "user",
+                "content": "hello i'd like to take an order"
+            },
+            {
+                "role": "assistant",
+                "content": "What type of order would you like to place: pickup or delivery?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Would you like to order from our Signature Pizzas or add something from Pizza Add-Ons?"
+            },
+            {
+                "role": "user",
+                "content": "i'd like to take the"
+            },
+            {
+                "role": "assistant",
+                "content": "Which pizza would you like: BBQ Chicken Blast, Classic Margherita, or The Meat Monster?"
+            },
+            {
+                "role": "user",
+                "content": "i'd like the order i'll start with the picking up"
+            },
+            {
+                "role": "assistant",
+                "content": "You've chosen pickup. Would you like to order a BBQ Chicken Blast, Classic Margherita, or The Meat Monster?"
+            },
+            {
+                "role": "user",
+                "content": "i will go for bbc ticket number"
+            },
+            {
+                "role": "assistant",
+                "content": "I think you meant BBQ Chicken Blast. Would you like to add any extras like Extra Cheese, Jalapenos, or Mushrooms?"
+            },
+            {
+                "role": "user",
+                "content": "i want to add extra key"
+            },
+            {
+                "role": "assistant",
+                "content": "I think you meant Extra Cheese. How many BBQ Chicken Blasts with Extra Cheese would you like to order?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "You've got a BBQ Chicken Blast with Extra Cheese. Would you like to add another item or confirm your order?"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-18T20:21:51.961754",
+        "session_id": "0f53ac81-efc0-409f-b50c-0bb8c446adda",
+        "caller_number": "+12295080565",
+        "call_sid": "CA6ab7824e0fd9b5dba7483e3caa949cb6",
+        "confirmed": true,
+        "final_order": {
+            "items": [
+                {
+                    "name": "BBQ Chicken Blast",
+                    "quantity": 1
+                }
+            ],
+            "order_type": "pickup"
+        },
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "What type of order would you like to place, pickup or delivery?"
+            },
+            {
+                "role": "user",
+                "content": "hello i'd like to take an order"
+            },
+            {
+                "role": "assistant",
+                "content": "What type of pizza would you like to order from our Signature Pizzas: BBQ Chicken Blast, Classic Margherita, or The Meat Monster?"
+            },
+            {
+                "role": "user",
+                "content": "i'd like to order one big box sir"
+            },
+            {
+                "role": "assistant",
+                "content": "We don't have a \"big box\" on our menu. Would you like to order a specific pizza, such as the BBQ Chicken Blast, Classic Margherita, or The Meat Monster?"
+            },
+            {
+                "role": "user",
+                "content": "okay i'll go for"
+            },
+            {
+                "role": "assistant",
+                "content": "It seems like you started to order but didn't finish. Could you please complete your order by choosing a pizza: BBQ Chicken Blast, Classic Margherita, or The Meat Monster?"
+            },
+            {
+                "role": "user",
+                "content": "baby peel chicken ma'am"
+            },
+            {
+                "role": "user",
+                "content": "i want bpt"
+            },
+            {
+                "role": "assistant",
+                "content": "I think you meant \"BBQ\". Would you like to order the BBQ Chicken Blast pizza?"
+            },
+            {
+                "role": "user",
+                "content": "yes"
+            },
+            {
+                "role": "assistant",
+                "content": "Would you like to add any extras to your BBQ Chicken Blast pizza, such as Extra Cheese, Jalapenos, or Mushrooms?"
+            },
+            {
+                "role": "user",
+                "content": "thanks for the queue"
+            },
+            {
+                "role": "assistant",
+                "content": "I think you meant to confirm your order. Is your order complete with just the BBQ Chicken Blast pizza, or would you like to add something else?"
+            },
+            {
+                "role": "user",
+                "content": "no i want to confirm my order"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "wk1sxgkke",
+                        "type": "function",
+                        "function": {
+                            "name": "confirm_and_submit_order",
+                            "arguments": "{\"items\":[{\"name\":\"BBQ Chicken Blast\",\"quantity\":1}],\"order_type\":\"pickup\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "wk1sxgkke",
+                "content": "Order confirmed and submitted successfully to backend."
+            },
+            {
+                "role": "assistant",
+                "content": "Order confirmed and submitted."
+            },
+            {
+                "role": "user",
+                "content": "thank you"
+            },
+            {
+                "role": "assistant",
+                "content": "You're welcome. Have a great day."
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-18T20:41:59.624988",
+        "session_id": "cdd1539c-997f-411e-a4e9-24b9016c6e92",
+        "caller_number": "+12295080565",
+        "call_sid": "CAef22144bcd7581ac8d59e7f4769b3332",
+        "confirmed": true,
+        "final_order": {
+            "items": [
+                {
+                    "name": "BBQ Chicken Blast",
+                    "quantity": 1
+                },
+                {
+                    "name": "Extra Cheese",
+                    "quantity": 1
+                }
+            ],
+            "order_type": "pickup"
+        },
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "What kind of pizza can I get for you?"
+            },
+            {
+                "role": "user",
+                "content": "hello i would like to carry order"
+            },
+            {
+                "role": "assistant",
+                "content": "You'd like to place a pickup order. What type of pizza would you like?"
+            },
+            {
+                "role": "user",
+                "content": "i would like to order a barbecue chicken box"
+            },
+            {
+                "role": "assistant",
+                "content": "I'll take that as a BBQ Chicken Blast pizza. Would you like any add-ons with that?"
+            },
+            {
+                "role": "user",
+                "content": "i want to add extra cheese"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "epws60wdc",
+                        "type": "function",
+                        "function": {
+                            "name": "confirm_and_submit_order",
+                            "arguments": "{\"items\":[{\"name\":\"BBQ Chicken Blast\",\"quantity\":1},{\"name\":\"Extra Cheese\",\"quantity\":1}],\"order_type\":\"pickup\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "epws60wdc",
+                "content": "Order confirmed and submitted successfully to backend."
+            },
+            {
+                "role": "assistant",
+                "content": "Order confirmed."
+            },
+            {
+                "role": "user",
+                "content": "thank you"
+            },
+            {
+                "role": "assistant",
+                "content": "You're welcome."
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-18T20:46:32.310892",
+        "session_id": "63435b1f-95b9-4c87-9f83-4cf72e2510ac",
+        "caller_number": "+12295080565",
+        "call_sid": "CA4549e87d52e25faaaf6355b25cc29d34",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "What type of order would you like to place, pickup or delivery?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Would you like to order a signature pizza or add some extras to your order?"
+            },
+            {
+                "role": "user",
+                "content": "i'd like to order an"
+            },
+            {
+                "role": "assistant",
+                "content": "Which pizza would you like: BBQ Chicken Blast, Classic Margherita, or The Meat Monster?"
+            },
+            {
+                "role": "user",
+                "content": "thermody"
+            },
+            {
+                "role": "assistant",
+                "content": "I couldn't find a \"thermody\" pizza, would you like to try a Classic Margherita?"
+            },
+            {
+                "role": "user",
+                "content": "okay i'm so so classic"
+            },
+            {
+                "role": "assistant",
+                "content": "I'll add a Classic Margherita to your order. Would you like to add any extras like Extra Cheese, Jalapenos, or Mushrooms?"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-18T20:53:08.798188",
+        "session_id": "40f32f81-f2a1-4b40-b78c-3be435324559",
+        "caller_number": "+12295080565",
+        "call_sid": "CAc09882152766f3b733026d5a38b2fced",
+        "confirmed": true,
+        "final_order": {
+            "items": [
+                {
+                    "name": "BBQ Chicken Blast",
+                    "quantity": 1
+                },
+                {
+                    "name": "Extra Cheese",
+                    "quantity": 1
+                }
+            ],
+            "order_type": "pickup"
+        },
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "What kind of pizza can I get for you?"
+            },
+            {
+                "role": "user",
+                "content": "it's like to take an order"
+            },
+            {
+                "role": "assistant",
+                "content": "Would you like to order from our Signature Pizzas or add something from our Pizza Add-Ons?"
+            },
+            {
+                "role": "user",
+                "content": "i want to order a privacy chicken box"
+            },
+            {
+                "role": "assistant",
+                "content": "I'll map that to a BBQ Chicken Blast pizza. Would you like to make it a pickup or delivery order?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "You already started ordering a BBQ Chicken Blast pizza. Would you like to add any extras, like Extra Cheese or Jalapenos?"
+            },
+            {
+                "role": "user",
+                "content": "i want to add extra tip"
+            },
+            {
+                "role": "assistant",
+                "content": "I'll map that to Extra Cheese. You now have a BBQ Chicken Blast pizza with Extra Cheese. Would you like to make it a pickup or delivery order?"
+            },
+            {
+                "role": "user",
+                "content": "yeah i want to confirm"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "935nqv73c",
+                        "type": "function",
+                        "function": {
+                            "name": "confirm_and_submit_order",
+                            "arguments": "{\"items\":[{\"name\":\"BBQ Chicken Blast\",\"quantity\":1},{\"name\":\"Extra Cheese\",\"quantity\":1}],\"order_type\":\"pickup\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "935nqv73c",
+                "content": "Order confirmed and submitted successfully to backend."
+            },
+            {
+                "role": "assistant",
+                "content": "Order confirmed."
+            },
+            {
+                "role": "user",
+                "content": "thank you"
+            },
+            {
+                "role": "assistant",
+                "content": "You're welcome."
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-18T21:06:17.944196",
+        "session_id": "a9fc2c1e-bf90-4951-82ea-bc7d89f4803b",
+        "caller_number": "+12295080565",
+        "call_sid": "CA3023d5849e4536f83c19ae1fd4701306",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "What kind of pizza can I get for you?"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-18T21:07:33.117122",
+        "session_id": "27847e44-da83-4207-8337-4cbf8c7a4591",
+        "caller_number": "+12295080565",
+        "call_sid": "CAb063436a9525b2a1146438a6084bda36",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "What kind of pizza can I get for you?"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-18T21:08:24.055744",
+        "session_id": "6a24b251-07e3-48e4-9c2d-375f24d5f91f",
+        "caller_number": "+12295080565",
+        "call_sid": "CA925e8b7d7b8d90fcd8e5a943d9b1e3d4",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "What kind of pizza can I get for you?"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-18T21:15:41.551739",
+        "session_id": "5a2dc133-6f3c-4e93-93df-de73fd14f92a",
+        "caller_number": "+12295080565",
+        "call_sid": "CA0aa7c01dc589105c42f7c15d34539918",
+        "confirmed": true,
+        "final_order": {
+            "items": [
+                {
+                    "name": "BBQ Chicken Blast",
+                    "quantity": 1
+                },
+                {
+                    "name": "Extra Cheese",
+                    "quantity": 1
+                }
+            ],
+            "order_type": "pickup"
+        },
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "What kind of pizza can I get for you?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Would you like a BBQ Chicken Blast, Classic Margherita, or The Meat Monster pizza?"
+            },
+            {
+                "role": "user",
+                "content": "i want to order a barbecue chicken breast"
+            },
+            {
+                "role": "assistant",
+                "content": "I'll put you down for a BBQ Chicken Blast pizza. Would you like to add any extras like Extra Cheese, Jalapenos, or Mushrooms?"
+            },
+            {
+                "role": "user",
+                "content": "okay i'll go for extra cheap"
+            },
+            {
+                "role": "assistant",
+                "content": "I'll add Extra Cheese to your BBQ Chicken Blast pizza. Would you like to pick it up or have it delivered?"
+            },
+            {
+                "role": "user",
+                "content": "i'd like to pick it up"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "h686sja64",
+                        "type": "function",
+                        "function": {
+                            "name": "confirm_and_submit_order",
+                            "arguments": "{\"items\":[{\"name\":\"BBQ Chicken Blast\",\"quantity\":1},{\"name\":\"Extra Cheese\",\"quantity\":1}],\"order_type\":\"pickup\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "h686sja64",
+                "content": "Order confirmed and submitted successfully to backend."
+            },
+            {
+                "role": "assistant",
+                "content": "Order confirmed."
+            },
+            {
+                "role": "user",
+                "content": "yes confirming"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "stqnxn950",
+                        "type": "function",
+                        "function": {
+                            "name": "confirm_and_submit_order",
+                            "arguments": "{\"items\":[{\"name\":\"BBQ Chicken Blast\",\"quantity\":1},{\"name\":\"Extra Cheese\",\"quantity\":1}],\"order_type\":\"pickup\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "stqnxn950",
+                "content": "Order confirmed and submitted successfully to backend."
+            },
+            {
+                "role": "assistant",
+                "content": "Order confirmed."
+            },
+            {
+                "role": "user",
+                "content": "okay thank you"
+            },
+            {
+                "role": "assistant",
+                "content": "You're welcome."
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-18T21:35:47.328996",
+        "session_id": "e0e89fd9-dc62-46d1-bf4a-56f013ee5d38",
+        "caller_number": "+12295080565",
+        "call_sid": "CA41cf112694ccdea6cb7a5b638ee55878",
+        "confirmed": true,
+        "final_order": {
+            "items": [
+                {
+                    "name": "The Meat Monster",
+                    "quantity": 1
+                },
+                {
+                    "name": "Extra Cheese",
+                    "quantity": 1
+                }
+            ],
+            "order_type": "pickup"
+        },
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "What kind of pizza can I get for you?"
+            },
+            {
+                "role": "user",
+                "content": "i would like to place an order"
+            },
+            {
+                "role": "assistant",
+                "content": "Would you like to order a \"SIGNATURE PIZZA\" or add some \"PIZZA ADD-ONS\" to your order?"
+            },
+            {
+                "role": "user",
+                "content": "i'd like to honor and continue to get a lot"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "xe5stm4ya",
+                        "type": "function",
+                        "function": {
+                            "name": "confirm_and_submit_order",
+                            "arguments": "{\"items\":[{\"name\":\"The Meat Monster\",\"quantity\":1}],\"order_type\":\"pickup\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "xe5stm4ya",
+                "content": "Order confirmed and submitted successfully to backend."
+            },
+            {
+                "role": "assistant",
+                "content": "Would you like to add anything else, like \"Extra Cheese\" or \"Jalapenos\"?"
+            },
+            {
+                "role": "user",
+                "content": "okay i will go for expected"
+            },
+            {
+                "role": "assistant",
+                "content": "I'll add \"Extra Cheese\" to your order. Is your order complete, or would you like to add something else?"
+            },
+            {
+                "role": "user",
+                "content": "i would like to add an amount visa"
+            },
+            {
+                "role": "assistant",
+                "content": "You want to pay with Visa. Would you like to pick up your order or have it delivered?"
+            },
+            {
+                "role": "user",
+                "content": "i'd like to confirm my order"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "t1vk2q43n",
+                        "type": "function",
+                        "function": {
+                            "name": "confirm_and_submit_order",
+                            "arguments": "{\"items\":[{\"name\":\"The Meat Monster\",\"quantity\":1},{\"name\":\"Extra Cheese\",\"quantity\":1}],\"order_type\":\"pickup\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "t1vk2q43n",
+                "content": "Order confirmed and submitted successfully to backend."
+            },
+            {
+                "role": "assistant",
+                "content": "Order confirmed: 1 \"The Meat Monster\" pizza with \"Extra Cheese\"."
+            },
+            {
+                "role": "user",
+                "content": "thank you"
+            },
+            {
+                "role": "assistant",
+                "content": "You're welcome, have a great day."
+            }
+        ]
+    }
+]

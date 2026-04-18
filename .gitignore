@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables
+.env
+.env.example
+
+# Third-party tools & executables
+ngrok
+ngrok.exe
+
+# Logs and databases
+call_logs.csv
+
+saved_orders.jsonl
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+test_db.py
