@@ -968,5 +968,541 @@
                 "content": "You're welcome, have a great day."
             }
         ]
+    },
+    {
+        "timestamp": "2026-04-19T21:09:53.790821",
+        "session_id": "5338f1c9-c79c-42a3-a08e-01635d3ef298",
+        "caller_number": "+12295080565",
+        "call_sid": "CAc8c9d6ecb38a6d0ac237ca075edacd85",
+        "confirmed": true,
+        "final_order": {
+            "items": [
+                {
+                    "name": "BBQ Chicken Blast",
+                    "quantity": 1
+                },
+                {
+                    "name": "Classic Margherita",
+                    "quantity": 1
+                },
+                {
+                    "name": "Extra Cheese",
+                    "quantity": 1
+                }
+            ],
+            "order_type": "pickup"
+        },
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "What kind of pizza can I get for you?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Would you like a Signature Pizza or some add-ons?"
+            },
+            {
+                "role": "user",
+                "content": "i'd like to order an barbecue chicken box"
+            },
+            {
+                "role": "assistant",
+                "content": "I'll take that as a BBQ Chicken Blast pizza. Would you like to pick it up or have it delivered?"
+            },
+            {
+                "role": "user",
+                "content": "i want to add one more pizza"
+            },
+            {
+                "role": "assistant",
+                "content": "Which one would you like, the Classic Margherita or The Meat Monster?"
+            },
+            {
+                "role": "user",
+                "content": "i'll go to talk to margarita"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "w255d8wew",
+                        "type": "function",
+                        "function": {
+                            "name": "confirm_and_submit_order",
+                            "arguments": "{\"items\":[{\"name\":\"BBQ Chicken Blast\",\"quantity\":1},{\"name\":\"Classic Margherita\",\"quantity\":1}],\"order_type\":\"pickup\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "w255d8wew",
+                "content": "Order confirmed and submitted successfully to backend."
+            },
+            {
+                "role": "assistant",
+                "content": "Order confirmed: BBQ Chicken Blast and Classic Margherita for pickup."
+            },
+            {
+                "role": "user",
+                "content": "i'd like to add extra cheese on it"
+            },
+            {
+                "role": "assistant",
+                "content": "Which pizza would you like the Extra Cheese on, the BBQ Chicken Blast or the Classic Margherita?"
+            },
+            {
+                "role": "user",
+                "content": "plastic margarita"
+            },
+            {
+                "role": "assistant",
+                "content": "I'll add Extra Cheese to the Classic Margherita. Would you like to add anything else or confirm your order?"
+            },
+            {
+                "role": "user",
+                "content": "okay confirming"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "4f08gvzwp",
+                        "type": "function",
+                        "function": {
+                            "name": "confirm_and_submit_order",
+                            "arguments": "{\"items\":[{\"name\":\"BBQ Chicken Blast\",\"quantity\":1},{\"name\":\"Classic Margherita\",\"quantity\":1},{\"name\":\"Extra Cheese\",\"quantity\":1}],\"order_type\":\"pickup\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "4f08gvzwp",
+                "content": "Order confirmed and submitted successfully to backend."
+            },
+            {
+                "role": "assistant",
+                "content": "Order confirmed: BBQ Chicken Blast, Classic Margherita with Extra Cheese for pickup."
+            },
+            {
+                "role": "user",
+                "content": "thank you"
+            },
+            {
+                "role": "assistant",
+                "content": "You're welcome, have a great day."
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-20T18:20:45.632241",
+        "session_id": "c6c6cc1b-188c-4943-b307-a8e53c035fa1",
+        "caller_number": "+12295080565",
+        "call_sid": "CA32453d2b873d7854e89e3b110b8f6a79",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time, pickup or delivery?"
+            },
+            {
+                "role": "user",
+                "content": "hey i'd like to deliver it to one to three main street"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "azzxk7dq8",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"address\":\"1-3 Main Street\",\"next_state\":\"ORDER_TYPE\",\"order_type\":\"delivery\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "azzxk7dq8",
+                "content": "Cart updated. New state is ORDER_TYPE. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "You're all set for delivery to 1-3 Main Street. What can I get you?"
+            },
+            {
+                "role": "user",
+                "content": "can i get a pepperoni pizza"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "s1pwx7gjx",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"address\":\"1-3 Main Street\",\"items\":[{\"name\":\"pepperoni pizza\",\"quantity\":1}],\"next_state\":\"ITEM_CUSTOMIZATION\",\"order_type\":\"delivery\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "s1pwx7gjx",
+                "content": "Cart updated. New state is ITEM_CUSTOMIZATION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "What size pepperoni pizza?"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-20T18:38:56.322116",
+        "session_id": "80016c01-e678-4053-ae10-952957ba2ef3",
+        "caller_number": "+12295080565",
+        "call_sid": "CA7d00d83ed378367c5ea6034fec611097",
+        "confirmed": true,
+        "final_order": {
+            "items": [
+                {
+                    "name": "Pepperoni Feast",
+                    "quantity": 1,
+                    "size": "large",
+                    "crust": null,
+                    "half_half": null,
+                    "extra_cheese": false,
+                    "toppings_added": [],
+                    "toppings_removed": []
+                }
+            ],
+            "type": "delivery",
+            "address": "150 Main Street"
+        },
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time."
+            },
+            {
+                "role": "user",
+                "content": "oh hey i'd like to deliver it to one fifty main street"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "r2x20sx81",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"address\":\"150 Main Street\",\"next_state\":\"ORDER_TYPE\",\"order_type\":\"delivery\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "r2x20sx81",
+                "content": "Cart updated. New state is ORDER_TYPE. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "What can I get for you?"
+            },
+            {
+                "role": "user",
+                "content": "can i get a pepperoni piece"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "setgr9qxt",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"address\":\"150 Main Street\",\"items\":[{\"name\":\"Pepperoni Feast\",\"quantity\":1}],\"next_state\":\"ITEM_COLLECTION\",\"order_type\":\"delivery\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "setgr9qxt",
+                "content": "Cart updated. New state is ITEM_COLLECTION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "You're all set with a Pepperoni Feast. Anything else?"
+            },
+            {
+                "role": "user",
+                "content": "i would like to get a large"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "dah9sgbhh",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"address\":\"150 Main Street\",\"items\":[{\"name\":\"Pepperoni Feast\",\"quantity\":1,\"size\":\"large\"}],\"next_state\":\"ITEM_COLLECTION\",\"order_type\":\"delivery\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "dah9sgbhh",
+                "content": "Cart updated. New state is ITEM_COLLECTION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "Large Pepperoni Feast, got it. Anything else?"
+            },
+            {
+                "role": "user",
+                "content": "what do you have in your menu"
+            },
+            {
+                "role": "assistant",
+                "content": "We've got pizzas, sides, drinks, and desserts. You like something specific?"
+            },
+            {
+                "role": "user",
+                "content": "change it to medium"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "xwng13er4",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"address\":\"150 Main Street\",\"items\":[{\"name\":\"Pepperoni Feast\",\"quantity\":1,\"size\":\"medium\"}],\"next_state\":\"ITEM_COLLECTION\",\"order_type\":\"delivery\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "xwng13er4",
+                "content": "Cart updated. New state is ITEM_COLLECTION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "No problem, changing it to medium. Anything else?"
+            },
+            {
+                "role": "user",
+                "content": "that's the diet coke"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "9t9m4zcde",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"address\":\"150 Main Street\",\"items\":[{\"name\":\"Pepperoni Feast\",\"quantity\":1,\"size\":\"medium\"},{\"name\":\"Diet Coke\",\"quantity\":1}],\"next_state\":\"ITEM_COLLECTION\",\"order_type\":\"delivery\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "9t9m4zcde",
+                "content": "Cart updated. New state is ITEM_COLLECTION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "Diet Coke, got it. Anything else?"
+            },
+            {
+                "role": "user",
+                "content": "yes that's correct"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "sjb2hqpq4",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"address\":\"150 Main Street\",\"items\":[{\"name\":\"Pepperoni Feast\",\"quantity\":1,\"size\":\"medium\"},{\"name\":\"Diet Coke\",\"quantity\":1}],\"next_state\":\"ITEM_CUSTOMIZATION\",\"order_type\":\"delivery\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "sjb2hqpq4",
+                "content": "Cart updated. New state is ITEM_CUSTOMIZATION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "What crust you want for the Pepperoni Feast?"
+            },
+            {
+                "role": "user",
+                "content": "oh vivian"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time."
+            },
+            {
+                "role": "user",
+                "content": "yes yes"
+            },
+            {
+                "role": "assistant",
+                "content": "What crust you want for the Pepperoni Feast?"
+            },
+            {
+                "role": "user",
+                "content": "what crust do you have"
+            },
+            {
+                "role": "assistant",
+                "content": "We've got thin, thick, and gluten-free. Which one?"
+            },
+            {
+                "role": "user",
+                "content": "not"
+            },
+            {
+                "role": "user",
+                "content": "large pepperoni pizza"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "1sgesycg2",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"address\":\"150 Main Street\",\"items\":[{\"name\":\"Pepperoni Feast\",\"quantity\":1,\"size\":\"large\"}],\"next_state\":\"ITEM_COLLECTION\",\"order_type\":\"delivery\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "1sgesycg2",
+                "content": "Cart updated. New state is ITEM_COLLECTION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "You're changing to a large, got it. Anything else?"
+            },
+            {
+                "role": "user",
+                "content": "no confirm"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "wz9dyfkbh",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"address\":\"150 Main Street\",\"items\":[{\"name\":\"Pepperoni Feast\",\"quantity\":1,\"size\":\"large\"}],\"next_state\":\"CONFIRMATION\",\"order_type\":\"delivery\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "wz9dyfkbh",
+                "content": "Cart updated. New state is CONFIRMATION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "Perfect, your order is confirmed. Thanks for calling."
+            },
+            {
+                "role": "user",
+                "content": "thank you"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "4grxyg8t7",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"address\":\"150 Main Street\",\"items\":[{\"name\":\"Pepperoni Feast\",\"quantity\":1,\"size\":\"large\"}],\"next_state\":\"CLOSE\",\"order_type\":\"delivery\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "4grxyg8t7",
+                "content": "Cart updated. New state is CLOSE. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "Have a great night."
+            }
+        ]
     }
 ]
