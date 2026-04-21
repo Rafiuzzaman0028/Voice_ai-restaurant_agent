@@ -4,6 +4,7 @@ from app.core.state_manager import StateManager
 from app.services.deepgram_service import DeepgramService
 from app.services.openai_service import OpenAIService
 from app.services.elevenlabs_service import ElevenLabsService
+from app.models.order import ConversationState
 
 logger = get_logger(__name__)
 
@@ -138,7 +139,7 @@ class CallOrchestrator:
         finally:
             # Update order status explicitly if AI marked it confirmed
             if self.state.confirmation_status:
-                self.state.stage = "confirmed"
+                self.state.stage = ConversationState.CLOSE
                 
             # Save updated memory 
             StateManager.save_session(self.session_id, self.state)

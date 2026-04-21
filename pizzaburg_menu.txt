@@ -1,0 +1,28 @@
+PizzaBurg Official Menu
+
+Pizzas:
+- Margherita Pizza: Small ($10), Medium ($14), Large ($18). Classic tomato and cheese.
+- Pepperoni Feast: Small ($12), Medium ($16), Large ($20). Loaded with pepperoni.
+- Veggie Supreme: Small ($11), Medium ($15), Large ($19). Peppers, onions, mushrooms, olives.
+- Meat Lovers: Small ($14), Medium ($18), Large ($22). Sausage, bacon, pepperoni, ham.
+- BBQ Chicken Pizza: Small ($13), Medium ($17), Large ($21). BBQ sauce base with fresh grilled chicken and red onions.
+
+Crust Options (Available for all pizzas at no extra charge unless specified):
+- Regular Crust
+- Thin Crust
+- Stuffed Crust (Add $2)
+
+Sides:
+- Garlic Bread: $5 (4 pieces)
+- Cheesy Garlic Bread: $7 (4 pieces)
+- Hot Wings: $9 (8 pieces)
+- Mozzarella Sticks: $8 (6 pieces)
+
+Drinks:
+- Coke, Sprite, Fanta: $2
+- Diet Coke: $2
+- Bottled Water: $1.50
+
+Desserts:
+- Chocolate Lava Cake: $6
+- Tiramisu: $7
