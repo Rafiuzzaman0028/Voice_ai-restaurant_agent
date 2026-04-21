@@ -32,3 +32,17 @@ async def on_startup():
     from app.config.settings import settings
     if "?" in settings.TWILIO_ACCOUNT_SID or not settings.OPENAI_API_KEY:
         logger.warning("Missing or unconfigured environment variables. Check .env")
+
+    # Load local menu fallback if no upload exists
+    try:
+        from app.core.state_manager import global_store
+        import os
+        menu_path = "pizzaburg_menu.txt"
+        if os.path.exists(menu_path):
+            with open(menu_path, "r", encoding="utf-8") as f:
+                global_store["global_restaurant_menu"] = f.read()
+                logger.info("Successfully pre-loaded pizzaburg_menu.txt into memory.")
+        else:
+            logger.warning(f"Could not find {menu_path} on startup.")
+    except Exception as e:
+        logger.error(f"Error loading menu on startup: {e}")

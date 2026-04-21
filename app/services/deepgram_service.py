@@ -20,7 +20,7 @@ class DeepgramService:
 
 #         self.url = "wss://api.deepgram.com/v1/listen?encoding=mulaw&sample_rate=8000&channels=1&model=nova-2&interim_results=true&endpointing=250&utterance_end_ms=1000&vad_events=true"
         # Moderated endpointing (500ms) to prevent cutting off callers, using VAD to track true utterance ends
-        self.url = "wss://api.deepgram.com/v1/listen?encoding=mulaw&sample_rate=8000&channels=1&model=nova-2&interim_results=true&endpointing=500&utterance_end_ms=1000&vad_events=true"
+        self.url = "wss://api.deepgram.com/v1/listen?encoding=mulaw&sample_rate=8000&channels=1&model=nova-2&interim_results=true&endpointing=300&utterance_end_ms=1000&vad_events=true"
 
     async def connect(self):
         try:

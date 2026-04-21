@@ -1504,5 +1504,846 @@
                 "content": "Have a great night."
             }
         ]
+    },
+    {
+        "timestamp": "2026-04-21T18:08:31.203752",
+        "session_id": "6a46ceab-d1ae-4482-af75-29874e165210",
+        "caller_number": "+12295080565",
+        "call_sid": "CAe337ff96566a5bdcb4e211686798ab6f",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-21T19:08:32.269056",
+        "session_id": "4c674c35-7916-4744-978f-3bd08eb4b98b",
+        "caller_number": "+12295080565",
+        "call_sid": "CA6bc985680f15851c0cd7c4599dca86fa",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg. Pickup or delivery today?"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-21T19:13:10.173827",
+        "session_id": "d341843d-95a2-44b1-8fda-154c896a89c5",
+        "caller_number": "+12295080565",
+        "call_sid": "CA716fdf418dc13599bbc4e427b5c0cc7f",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time."
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-21T20:08:14.433641",
+        "session_id": "f5e0b398-a5c4-47a2-810e-f246a89371da",
+        "caller_number": "+12295080565",
+        "call_sid": "CA149a91e2163289c8fd3d2b873f0f66b4",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time."
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Are you still there?"
+            },
+            {
+                "role": "user",
+                "content": "yes i will make an order"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "3stah5g8e",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"next_state\":\"ORDER_TYPE\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "3stah5g8e",
+                "content": "Cart updated. New state is ORDER_TYPE. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "You're ordering, pickup or delivery?"
+            },
+            {
+                "role": "user",
+                "content": "i will be attending"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "0g2kt9nt7",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"next_state\":\"ITEM_COLLECTION\",\"order_type\":\"dine-in\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "0g2kt9nt7",
+                "content": "Cart updated. New state is ITEM_COLLECTION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "What can I get for you?"
+            },
+            {
+                "role": "user",
+                "content": "i want to order barbecue chicken nuggets"
+            },
+            {
+                "role": "assistant",
+                "content": "We've got BBQ Chicken Pizza, though. Want to try that?"
+            },
+            {
+                "role": "user",
+                "content": "yes make it large"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "evhcfzkgn",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"items\":[{\"crust\":\"\",\"name\":\"BBQ Chicken Pizza\",\"quantity\":1,\"size\":\"large\",\"toppings_added\":[],\"toppings_removed\":[]}],\"next_state\":\"ITEM_CUSTOMIZATION\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "evhcfzkgn",
+                "content": "Cart updated. New state is ITEM_CUSTOMIZATION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "What crust would you like?"
+            },
+            {
+                "role": "user",
+                "content": "just extra teeth"
+            },
+            {
+                "role": "assistant",
+                "content": "I think you meant extra cheese, right?"
+            },
+            {
+                "role": "user",
+                "content": "yes"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "rakv7psvs",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"items\":[{\"crust\":\"\",\"extra_cheese\":true,\"name\":\"BBQ Chicken Pizza\",\"quantity\":1,\"size\":\"large\",\"toppings_added\":[],\"toppings_removed\":[]}],\"next_state\":\"ITEM_CUSTOMIZATION\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "rakv7psvs",
+                "content": "Cart updated. New state is ITEM_CUSTOMIZATION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "Crust type, hand-tossed or thin?"
+            },
+            {
+                "role": "user",
+                "content": "okay"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "6ngg5wt76",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"items\":[{\"crust\":\"hand-tossed\",\"extra_cheese\":true,\"name\":\"BBQ Chicken Pizza\",\"quantity\":1,\"size\":\"large\",\"toppings_added\":[],\"toppings_removed\":[]}],\"next_state\":\"UPSELL\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "6ngg5wt76",
+                "content": "Cart updated. New state is UPSELL. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "Would you like any drinks or sides with that?"
+            },
+            {
+                "role": "user",
+                "content": "what do you have"
+            },
+            {
+                "role": "assistant",
+                "content": "We've got drinks like Coke, Sprite, and Fanta, and sides like Garlic Bread and Hot Wings."
+            },
+            {
+                "role": "user",
+                "content": "on your mail"
+            },
+            {
+                "role": "assistant",
+                "content": "You mean on our menu? We've also got Mozzarella Sticks and Cheesy Garlic Bread."
+            },
+            {
+                "role": "user",
+                "content": "okay"
+            },
+            {
+                "role": "assistant",
+                "content": "So, want any of those?"
+            },
+            {
+                "role": "user",
+                "content": "i want to add one contact"
+            },
+            {
+                "role": "assistant",
+                "content": "You mean add a contact method, like a phone number, for your order?"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-21T21:01:25.305022",
+        "session_id": "83bff22c-0289-4caf-a052-d3f521a86c4a",
+        "caller_number": "+971588373893",
+        "call_sid": "CA47974efd0ff921f45f5b4ecd34c67029",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time."
+            },
+            {
+                "role": "user",
+                "content": "hello hello"
+            },
+            {
+                "role": "assistant",
+                "content": "You're calling PizzaBurg, pickup or delivery?"
+            },
+            {
+                "role": "user",
+                "content": "how are you"
+            },
+            {
+                "role": "assistant",
+                "content": "I'm good, thanks. Pickup or delivery today?"
+            },
+            {
+                "role": "user",
+                "content": "i'd like to order a pepperoni pizza"
+            },
+            {
+                "role": "user",
+                "content": "pepperoni pizza"
+            },
+            {
+                "role": "user",
+                "content": "i'd like to order a pepperoni pizza"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-21T21:40:41.183948",
+        "session_id": "27b3b731-7971-40c1-bf39-25b864ee3ff3",
+        "caller_number": "+12295080565",
+        "call_sid": "CA963475b2841fe44292237294f9acf17e",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-21T21:45:11.287874",
+        "session_id": "aa6ef34e-c801-471e-ae07-387091bfcc82",
+        "caller_number": "+12295080565",
+        "call_sid": "CAfbd3c549eef141f30b2b94a019da0dcf",
+        "confirmed": true,
+        "final_order": {
+            "items": [
+                {
+                    "name": "BBQ Chicken Blast",
+                    "quantity": 1,
+                    "size": "large",
+                    "crust": null,
+                    "half_half": null,
+                    "extra_cheese": true,
+                    "toppings_added": [
+                        "Mushrooms"
+                    ],
+                    "toppings_removed": []
+                },
+                {
+                    "name": "Classic Margherita",
+                    "quantity": 1,
+                    "size": "large",
+                    "crust": null,
+                    "half_half": null,
+                    "extra_cheese": true,
+                    "toppings_added": [],
+                    "toppings_removed": []
+                }
+            ],
+            "type": "delivery",
+            "address": "one two three mill road"
+        },
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time."
+            },
+            {
+                "role": "user",
+                "content": "i want to place an order"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "53d5wvnn3",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"next_state\":\"ORDER_TYPE\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "53d5wvnn3",
+                "content": "Cart updated. New state is ORDER_TYPE. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "You're ordering, pickup or delivery?"
+            },
+            {
+                "role": "user",
+                "content": "delivery"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "j383jfxag",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"next_state\":\"ITEM_COLLECTION\",\"order_type\":\"delivery\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "j383jfxag",
+                "content": "Cart updated. New state is ITEM_COLLECTION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "What can I get for you?"
+            },
+            {
+                "role": "user",
+                "content": "i want to order a barbecue chicken butt"
+            },
+            {
+                "role": "assistant",
+                "content": "We've got a BBQ Chicken Blast, is that it?"
+            },
+            {
+                "role": "user",
+                "content": "yeah i want to add one more"
+            },
+            {
+                "role": "assistant",
+                "content": "Which one you want to add?"
+            },
+            {
+                "role": "user",
+                "content": "what do you have in your venue"
+            },
+            {
+                "role": "assistant",
+                "content": "We've got our Signature Pizzas, like the Classic Margherita or The Meat Monster."
+            },
+            {
+                "role": "user",
+                "content": "okay i will go for classic margarita"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "t8gxj1x2n",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"items\":[{\"name\":\"BBQ Chicken Blast\",\"quantity\":1},{\"name\":\"Classic Margherita\",\"quantity\":1}],\"next_state\":\"ITEM_CUSTOMIZATION\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "t8gxj1x2n",
+                "content": "Cart updated. New state is ITEM_CUSTOMIZATION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "What size for the BBQ Chicken Blast?"
+            },
+            {
+                "role": "user",
+                "content": "large"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "y89g2878e",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"items\":[{\"name\":\"BBQ Chicken Blast\",\"quantity\":1,\"size\":\"large\"},{\"name\":\"Classic Margherita\",\"quantity\":1}],\"next_state\":\"ITEM_CUSTOMIZATION\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "y89g2878e",
+                "content": "Cart updated. New state is ITEM_CUSTOMIZATION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "What size for the Classic Margherita?"
+            },
+            {
+                "role": "user",
+                "content": "large"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "m9zrsq8cg",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"items\":[{\"name\":\"BBQ Chicken Blast\",\"quantity\":1,\"size\":\"large\"},{\"name\":\"Classic Margherita\",\"quantity\":1,\"size\":\"large\"}],\"next_state\":\"ITEM_CUSTOMIZATION\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "m9zrsq8cg",
+                "content": "Cart updated. New state is ITEM_CUSTOMIZATION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "Crust type for the BBQ Chicken Blast?"
+            },
+            {
+                "role": "user",
+                "content": "yes"
+            },
+            {
+                "role": "assistant",
+                "content": "That's not a crust type. What crust for the BBQ Chicken Blast?"
+            },
+            {
+                "role": "user",
+                "content": "extra cheese"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "bte616nng",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"items\":[{\"extra_cheese\":true,\"name\":\"BBQ Chicken Blast\",\"quantity\":1,\"size\":\"large\"},{\"name\":\"Classic Margherita\",\"quantity\":1,\"size\":\"large\"}],\"next_state\":\"ITEM_CUSTOMIZATION\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "bte616nng",
+                "content": "Cart updated. New state is ITEM_CUSTOMIZATION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "You want extra cheese on the Classic Margherita too?"
+            },
+            {
+                "role": "user",
+                "content": "yes"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "2kkch545n",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"items\":[{\"extra_cheese\":true,\"name\":\"BBQ Chicken Blast\",\"quantity\":1,\"size\":\"large\"},{\"extra_cheese\":true,\"name\":\"Classic Margherita\",\"quantity\":1,\"size\":\"large\"}],\"next_state\":\"ADDRESS_COLLECTION\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "2kkch545n",
+                "content": "Cart updated. New state is ADDRESS_COLLECTION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "What's your delivery address?"
+            },
+            {
+                "role": "user",
+                "content": "one two three mill road"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "v0b3rq3vs",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"address\":\"one two three mill road\",\"next_state\":\"ORDER_REVIEW\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "v0b3rq3vs",
+                "content": "Cart updated. New state is ORDER_REVIEW. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "Let me confirm: two large pizzas, both with extra cheese..."
+            },
+            {
+                "role": "user",
+                "content": "what do you have anything else"
+            },
+            {
+                "role": "assistant",
+                "content": "We've got some Pizza Add-Ons, like Jalapenos or Mushrooms."
+            },
+            {
+                "role": "user",
+                "content": "okay i will get one mushroom too"
+            },
+            {
+                "role": "user",
+                "content": "one mushroom"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "2zx68h4c5",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"items\":[{\"extra_cheese\":true,\"name\":\"BBQ Chicken Blast\",\"quantity\":1,\"size\":\"large\",\"toppings_added\":[\"Mushrooms\"]},{\"extra_cheese\":true,\"name\":\"Classic Margherita\",\"quantity\":1,\"size\":\"large\"}],\"next_state\":\"ORDER_REVIEW\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "2zx68h4c5",
+                "content": "Cart updated. New state is ORDER_REVIEW. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "So, one large BBQ Chicken Blast with extra cheese and mushrooms, and one large Classic Margherita with extra cheese, is that all correct?"
+            },
+            {
+                "role": "user",
+                "content": "yes"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "bxcqb4d7c",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"next_state\":\"CONFIRMATION\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "bxcqb4d7c",
+                "content": "Cart updated. New state is CONFIRMATION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "Perfect, your order is confirmed. Thanks for calling."
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-21T21:54:44.803547",
+        "session_id": "b88ebe26-14ea-4d9e-a82c-fbe56dcdc183",
+        "caller_number": "+12295080565",
+        "call_sid": "CA09bf64211da283340f93319b4da00e39",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time."
+            },
+            {
+                "role": "user",
+                "content": "i want to make a benefit"
+            },
+            {
+                "role": "assistant",
+                "content": "You wanna place an order, pickup or delivery?"
+            },
+            {
+                "role": "user",
+                "content": "pickup"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "b7b18fwsc",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"next_state\":\"ORDER_TYPE\",\"order_type\":\"pickup\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "b7b18fwsc",
+                "content": "Cart updated. New state is ORDER_TYPE. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "What can I get for you?"
+            },
+            {
+                "role": "user",
+                "content": "one bbq chicken box"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "se54wr8zs",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"items\":[{\"name\":\"BBQ Chicken Pizza\",\"quantity\":1}],\"next_state\":\"ITEM_COLLECTION\",\"order_type\":\"pickup\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "se54wr8zs",
+                "content": "Cart updated. New state is ITEM_COLLECTION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "What size is that?"
+            },
+            {
+                "role": "user",
+                "content": "medium"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "jvmc87xyj",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"items\":[{\"name\":\"BBQ Chicken Pizza\",\"quantity\":1,\"size\":\"medium\"}],\"next_state\":\"ITEM_COLLECTION\",\"order_type\":\"pickup\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "jvmc87xyj",
+                "content": "Cart updated. New state is ITEM_COLLECTION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "Anything else?"
+            },
+            {
+                "role": "user",
+                "content": "one"
+            },
+            {
+                "role": "user",
+                "content": "one four three"
+            }
+        ]
     }
 ]

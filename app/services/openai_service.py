@@ -131,6 +131,7 @@ class OpenAIService:
             start_time = time.time()
             logger.info(f"Starting OpenAI request... [State: {state.stage.value}]")
             response_stream = await client.chat.completions.create(
+#                model="llama-3.1-8b-instant",
                 model="llama-3.3-70b-versatile",
                 messages=messages,
                 tools=tools,
@@ -218,9 +219,10 @@ class OpenAIService:
                     messages = [{"role": "system", "content": OpenAIService._generate_system_prompt(state, menu_json)}] + state.transcript_history
                     
                     second_stream = await client.chat.completions.create(
+#                       model="llama-3.1-8b-instant",
                         model="llama-3.3-70b-versatile",
                         messages=messages,
-                        temperature=0.4,
+                        temperature=0.3,
                         max_tokens=150,
                         stream=True
                     )

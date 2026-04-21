@@ -12,6 +12,7 @@ class CallOrchestrator:
     def __init__(self, websocket, session_id: str, caller_number: str, call_sid: str):
         self.twilio_ws = websocket
         self.session_id = session_id
+        self.call_sid = call_sid
         self.state = StateManager.get_or_create_session(session_id, caller_number, call_sid)
         
         # Stream identifier provided by Twilio stream start event
@@ -27,6 +28,10 @@ class CallOrchestrator:
     async def start(self):
         logger.info(f"Orchestrator starting for session: {self.session_id}")
         await self.deepgram.connect()
+        
+        import asyncio
+        # Wait 1.5 seconds so the cell network has time to connect before AI starts talking
+        await asyncio.sleep(1.5)
         
         # Initial greeting from the AI to kick off the call
         await self.trigger_ai_response("Hello.")
@@ -145,6 +150,14 @@ class CallOrchestrator:
             StateManager.save_session(self.session_id, self.state)
             
             self.is_processing_ai = False
+            
+            # If the conversation is over, wait for the final message to play, then hang up natively.
+            if self.state.stage == ConversationState.CLOSE:
+                logger.info("Conversation complete. Scheduling AI hangup in 4 seconds...")
+                async def delayed_hangup():
+                    await asyncio.sleep(4)
+                    await self.stop()
+                asyncio.create_task(delayed_hangup())
 
     async def on_audio_received(self, audio_b64: str):
         """ Callback for ElevenLabs sending back audio. Maps back to Twilio. """
@@ -163,5 +176,17 @@ class CallOrchestrator:
 
     async def stop(self):
         await self.deepgram.close()
+        await self.elevenlabs.close()
         StateManager.delete_session(self.session_id)
+        
+        # Explicitly end the call via REST API to ensure no zombie calls
+        try:
+            from app.config.settings import settings
+            from twilio.rest import Client
+            client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
+            client.calls(self.call_sid).update(status="completed")
+            logger.info(f"Force-terminated Twilio call sid {self.call_sid} via API")
+        except Exception as e:
+            logger.error(f"Could not forcefully complete Twilio call {self.call_sid}: {e}")
+            
         logger.info(f"Orchestrator stopped for session: {self.session_id}")

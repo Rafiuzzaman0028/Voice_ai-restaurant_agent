@@ -117,3 +117,12 @@ class ElevenLabsService:
             await asyncio.gather(send_text(), receive_audio())
         except Exception as e:
             logger.error(f"ElevenLabs stream loop error: {e}")
+
+    async def close(self):
+        if self.active_websocket:
+            try:
+                await self.active_websocket.close()
+                self.active_websocket = None
+                logger.info("ElevenLabs STT prewarmed disconnected properly.")
+            except Exception as e:
+                logger.error(f"Error closing ElevenLabs WS: {e}")
