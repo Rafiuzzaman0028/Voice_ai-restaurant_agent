@@ -25,6 +25,8 @@ async def handle_incoming_call(request: Request):
     # Using the host header allows us to not hardcode the Ngrok URL, but it fails behind Nginx without proxy_set_header
     import os
     domain = os.environ.get("SERVER_DOMAIN")
+    if domain:
+        domain = domain.replace("https://", "").replace("http://", "").rstrip("/")
     host = domain if domain else request.headers.get("host")
     
     # Generate TwiML
