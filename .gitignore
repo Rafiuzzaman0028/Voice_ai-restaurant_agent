@@ -28,3 +28,4 @@ saved_orders.jsonl
 .DS_Store
 Thumbs.db
 test_db.py
+saved_orders.json
