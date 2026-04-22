@@ -44,27 +44,27 @@ def log_call(call_sid, from_num, to_num, duration, status, price, notes):
             call_sid, from_num, to_num, duration, status, price, notes
         ])
 
-def get_ngrok_url():
-    """Fetch the current public URL from the local Ngrok instance."""
-    print(f"{CYAN}Checking Ngrok status...{RESET}")
-    try:
-        req = urllib.request.Request("http://127.0.0.1:4040/api/tunnels")
-        with urllib.request.urlopen(req) as response:
-            data = json.loads(response.read().decode())
-            tunnels = data.get("tunnels", [])
-            if not tunnels:
-                print(f"{YELLOW}Warning: Ngrok API reachable, but no active tunnels found!{RESET}")
-                return None
-            else:
-                public_url = tunnels[0].get('public_url')
-                # ensure it's https
-                if public_url.startswith("http://"):
-                    public_url = public_url.replace("http://", "https://")
-                print(f"{GREEN}Ngrok is active: {public_url}{RESET}")
-                return public_url
-    except Exception as e:
-        print(f"{RED}Error: Ngrok is NOT reachable at localhost:4040. Ensure it is running! ({e}){RESET}")
-        return None
+# def get_ngrok_url():
+#     """Fetch the current public URL from the local Ngrok instance."""
+#     print(f"{CYAN}Checking Ngrok status...{RESET}")
+#     try:
+#         req = urllib.request.Request("http://127.0.0.1:4040/api/tunnels")
+#         with urllib.request.urlopen(req) as response:
+#             data = json.loads(response.read().decode())
+#             tunnels = data.get("tunnels", [])
+#             if not tunnels:
+#                 print(f"{YELLOW}Warning: Ngrok API reachable, but no active tunnels found!{RESET}")
+#                 return None
+#             else:
+#                 public_url = tunnels[0].get('public_url')
+#                 # ensure it's https
+#                 if public_url.startswith("http://"):
+#                     public_url = public_url.replace("http://", "https://")
+#                 print(f"{GREEN}Ngrok is active: {public_url}{RESET}")
+#                 return public_url
+#     except Exception as e:
+#         print(f"{RED}Error: Ngrok is NOT reachable at localhost:4040. Ensure it is running! ({e}){RESET}")
+#         return None
 
 def trigger_call_to_me():
     """Trigger an outbound call from the chatbot Twilio number to your mobile number."""
@@ -79,14 +79,18 @@ def trigger_call_to_me():
         return
 
     # Check for Ngrok URL
-    ngrok_url = get_ngrok_url()
-    if not ngrok_url:
-        print(f"{RED}Aborting call because Ngrok could not be found. Start Ngrok first!{RESET}")
-        return
+    # ngrok_url = get_ngrok_url()
+    # if not ngrok_url:
+    #     print(f"{RED}Aborting call because Ngrok could not be found. Start Ngrok first!{RESET}")
+    #     return
         
-    # Standard endpoint for the FastAPI Twilio webhook
-    webhook_url = f"{ngrok_url}/voice"
+    # # Standard endpoint for the FastAPI Twilio webhook
+    # webhook_url = f"{ngrok_url}/voice"
+    # Use production domain instead of ngrok
+    webhook_url = "https://test3.fireai.agency/voice"
     print(f"{CYAN}Webhook URL configured to: {webhook_url}{RESET}")
+    
+    #print(f"{CYAN}Webhook URL configured to: {webhook_url}{RESET}")
 
     # Initialize Twilio Client
     client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
@@ -134,8 +138,10 @@ if __name__ == '__main__':
     print(f"{CYAN}'CALL ME NOW' Twilio AI Chatbot Tester{RESET}")
     print("="*40)
     print("This script will call your personal mobile number.")
-    print("When you answer, it instructs Twilio to connect the call to your local Ngrok /voice webhook.")
-    print("Make sure FastAPI and Ngrok are running before continuing.")
+    #print("When you answer, it instructs Twilio to connect the call to your local Ngrok /voice webhook.")
+    #print("Make sure FastAPI and Ngrok are running before continuing.")
+    print("When you answer, Twilio connects the call to your live AI webhook.")
+    print("Make sure your FastAPI server is running on AWS.")
     print("="*40)
     
     # Prompt before calling
