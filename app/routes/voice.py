@@ -19,9 +19,13 @@ async def handle_incoming_call(request: Request):
     
     logger.info(f"Incoming call from: {caller_number} (SID: {call_sid})")
 
+#    host = request.headers.get("host")
+    
     # In a real environment, you extract your ngrok domain dynamically or from env
-    # Using the host header allows us to not hardcode the Ngrok URL
-    host = request.headers.get("host")
+    # Using the host header allows us to not hardcode the Ngrok URL, but it fails behind Nginx without proxy_set_header
+    import os
+    domain = os.environ.get("SERVER_DOMAIN")
+    host = domain if domain else request.headers.get("host")
     
     # Generate TwiML
     twiml_response = TwilioService.get_streaming_twiml(
