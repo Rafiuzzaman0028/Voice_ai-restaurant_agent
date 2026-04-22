@@ -19,9 +19,9 @@ class DeepgramService:
         self.is_speaking = False
 
 #         self.url = "wss://api.deepgram.com/v1/listen?encoding=mulaw&sample_rate=8000&channels=1&model=nova-2&interim_results=true&endpointing=250&utterance_end_ms=1000&vad_events=true"
-        # Moderated endpointing (500ms) to prevent cutting off callers, using VAD to track true utterance ends
-        self.url = "wss://api.deepgram.com/v1/listen?encoding=mulaw&sample_rate=8000&channels=1&model=nova-2&interim_results=true&endpointing=300&utterance_end_ms=1000&vad_events=true"
-
+        # Moderated endpointing (600ms) to prevent cutting off callers, using phonecall model for 8000hz Twilio audio
+        self.url = "wss://api.deepgram.com/v1/listen?encoding=mulaw&sample_rate=8000&channels=1&model=nova-2-phonecall&interim_results=true&endpointing=350&utterance_end_ms=1000&vad_events=true"
+#        self.url = "wss://api.deepgram.com/v1/listen?model=nova-2&encoding=mulaw&sample_rate=8000&channels=1&interim_results=true&endpointing=250"
     async def connect(self):
         try:
             self.websocket = await connect(

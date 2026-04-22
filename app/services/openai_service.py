@@ -26,6 +26,7 @@ class OpenAIService:
         5. Ask exactly ONE question at a time.
         6. Always reply gracefully to interruptions or corrections (e.g., "Actually make that medium" -> "No problem, changing it to medium").
         7. If uncertain or no input is heard, say "Take your time" or "Are you still there?".
+        8. CRITICAL: NEVER write raw JSON, XML, or <function> tags in your conversational output. If you need to update the cart, use the proper function calling API invisibly.
         
         MENU:
         {menu}
@@ -131,8 +132,8 @@ class OpenAIService:
             start_time = time.time()
             logger.info(f"Starting OpenAI request... [State: {state.stage.value}]")
             response_stream = await client.chat.completions.create(
-#                model="llama-3.1-8b-instant",
-                model="llama-3.3-70b-versatile",
+                model="llama-3.1-8b-instant",
+#                model="llama-3.3-70b-versatile",
                 messages=messages,
                 tools=tools,
                 temperature=0.3, # keep deterministic state handling
@@ -219,10 +220,11 @@ class OpenAIService:
                     messages = [{"role": "system", "content": OpenAIService._generate_system_prompt(state, menu_json)}] + state.transcript_history
                     
                     second_stream = await client.chat.completions.create(
-#                       model="llama-3.1-8b-instant",
-                        model="llama-3.3-70b-versatile",
+                        model="llama-3.1-8b-instant",
+#                        model="llama-3.3-70b-versatile",
+
                         messages=messages,
-                        temperature=0.3,
+                        temperature=0.4,
                         max_tokens=150,
                         stream=True
                     )
@@ -254,4 +256,4 @@ class OpenAIService:
                 
         except Exception as e:
             logger.error(f"OpenAI connection error: {e}")
-            yield "Sorry, could you repeat that?"
+            pass

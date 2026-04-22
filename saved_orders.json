@@ -2345,5 +2345,965 @@
                 "content": "one four three"
             }
         ]
+    },
+    {
+        "timestamp": "2026-04-21T22:06:06.653275",
+        "session_id": "9872aedf-952f-4845-9a7e-c55fc8a08be2",
+        "caller_number": "+12295080565",
+        "call_sid": "CAdfaf6e9505b53bbde6a96ecbf81fe469",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "user",
+                "content": "i want to place an order"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-21T22:30:35.574609",
+        "session_id": "b23e37d4-bd8d-4cba-9b8c-1446ff2643ec",
+        "caller_number": "+12295080565",
+        "call_sid": "CA808bd96728df931f951627431b5f3dab",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-21T22:31:33.719867",
+        "session_id": "11487c78-4640-4345-b15c-22ca22abccab",
+        "caller_number": "+12295080565",
+        "call_sid": "CA4438e2ca6b6079a71e931534155d983b",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-21T22:54:46.300013",
+        "session_id": "b4f649b4-f84f-4d48-be17-5285a184bcb3",
+        "caller_number": "+12295080565",
+        "call_sid": "CA67b0a582b671d470396880c4eb6d5c0f",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time."
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Are you still there?"
+            },
+            {
+                "role": "user",
+                "content": "can i place an order"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "85q22g6wg",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"next_state\":\"ORDER_TYPE\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "85q22g6wg",
+                "content": "Cart updated. New state is ORDER_TYPE. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "You're ordering, pickup or delivery?"
+            },
+            {
+                "role": "user",
+                "content": "i want to order a barbecue chicken plump"
+            },
+            {
+                "role": "assistant",
+                "content": "We'll get that BBQ Chicken pizza. That's a signature pizza, right? You wanted pickup or delivery with that?"
+            },
+            {
+                "role": "user",
+                "content": "it's a delivery"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "fbr3qanaw",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"next_state\":\"ITEM_COLLECTION\",\"order_type\":\"delivery\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "fbr3qanaw",
+                "content": "Cart updated. New state is ITEM_COLLECTION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "Got it, delivery. What size, though?"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-21T23:02:07.175906",
+        "session_id": "779f1536-b394-4159-9652-126176962a6a",
+        "caller_number": "+12295080565",
+        "call_sid": "CA213681276cab76bdd4d4830c929c3657",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            },
+            {
+                "role": "user",
+                "content": "hello hello hello i want to place an order can you get me"
+            },
+            {
+                "role": "assistant",
+                "content": "Pickup or delivery today?"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-21T23:04:56.617350",
+        "session_id": "2d4462bf-33b6-4e83-804b-647e43495c5b",
+        "caller_number": "+12295080565",
+        "call_sid": "CA0bae5408dff9434ed06bb9ffd21a6ebe",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time."
+            },
+            {
+                "role": "user",
+                "content": "hello i want to place an order"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "y9nj8m6ze",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"next_state\":\"ORDER_TYPE\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "y9nj8m6ze",
+                "content": "Cart updated. New state is ORDER_TYPE. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "You're ordering, pickup or delivery?"
+            },
+            {
+                "role": "user",
+                "content": "they get my word i want to go for delivery"
+            },
+            {
+                "role": "user",
+                "content": "hello can i make a delivery"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "n4bjk1akw",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"next_state\":\"ITEM_COLLECTION\",\"order_type\":\"delivery\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "n4bjk1akw",
+                "content": "Cart updated. New state is ITEM_COLLECTION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "What can I get for you?"
+            },
+            {
+                "role": "user",
+                "content": "i want to get a barbecue chicken breast"
+            },
+            {
+                "role": "assistant",
+                "content": "We've got a BBQ Chicken Pizza, I'll add that. What size?"
+            },
+            {
+                "role": "user",
+                "content": "large"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-22T15:47:41.473952",
+        "session_id": "71417a1c-be2b-417c-9bee-04bd0332ddb6",
+        "caller_number": "+12295080565",
+        "call_sid": "CAa6a273331941942051ae0f9508eda91c",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-22T15:54:25.824225",
+        "session_id": "4c9f7d4e-015f-437a-ab13-a43f8ab5efef",
+        "caller_number": "+12295080565",
+        "call_sid": "CA959e9403194e5fe83039e67356cd6e74",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg. Pickup or delivery today?"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-22T16:12:04.093838",
+        "session_id": "6e797c1d-6fd1-4cb0-9a04-7281e90d4ee8",
+        "caller_number": "+12295080565",
+        "call_sid": "CA292d1e4151e352fc03f6961175f1a6d0",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time."
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "You're on, pickup or delivery?"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-22T16:15:04.542018",
+        "session_id": "cb4d99be-715b-4489-abb8-a046c93318d2",
+        "caller_number": "+12295080565",
+        "call_sid": "CA5dbc9e03650b8529f7f73296b1e28814",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time."
+            },
+            {
+                "role": "user",
+                "content": "well i want to order a pizza"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "xgtwyfs4h",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"next_state\":\"ORDER_TYPE\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "xgtwyfs4h",
+                "content": "Cart updated. New state is ORDER_TYPE. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "You're ordering a pizza, that's great. Pickup or delivery?"
+            },
+            {
+                "role": "user",
+                "content": "i want to pay for a delivery"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "ng74j235m",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"next_state\":\"ITEM_COLLECTION\",\"order_type\":\"delivery\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "ng74j235m",
+                "content": "Cart updated. New state is ITEM_COLLECTION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "What kind of pizza you want?"
+            },
+            {
+                "role": "user",
+                "content": "i want"
+            },
+            {
+                "role": "assistant",
+                "content": "To order?"
+            },
+            {
+                "role": "user",
+                "content": "yes"
+            },
+            {
+                "role": "assistant",
+                "content": "Which pizza, we got Margherita, Pepperoni Feast, Veggie Supreme, Meat Lovers, or BBQ Chicken?"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-22T16:16:25.184084",
+        "session_id": "28fb57fb-af8a-4903-9486-99a02f1efc79",
+        "caller_number": "+12295080565",
+        "call_sid": "CA03c662b3c52c31588bd7b20efaded139",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time."
+            },
+            {
+                "role": "user",
+                "content": "i don't think make an order"
+            },
+            {
+                "role": "assistant",
+                "content": "No problem, thanks for calling PizzaBurg."
+            },
+            {
+                "role": "user",
+                "content": "i want to order a box of barbecue chicken box"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "3r994kd6c",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"items\":[{\"name\":\"BBQ Chicken Pizza\",\"quantity\":1}],\"next_state\":\"ITEM_COLLECTION\",\"order_type\":\"delivery\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "3r994kd6c",
+                "content": "Cart updated. New state is ITEM_COLLECTION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "You're getting a BBQ Chicken Pizza. What else?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time."
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-22T16:22:56.701481",
+        "session_id": "a15169a4-fdce-4c8a-9b24-ed6768164d1e",
+        "caller_number": "+12295080565",
+        "call_sid": "CAafd26660d9d17e864b90940d413af5ac",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time."
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Are you still there?"
+            },
+            {
+                "role": "user",
+                "content": "i want to place an order"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "pkr8aet1y",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"next_state\":\"ORDER_TYPE\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "pkr8aet1y",
+                "content": "Cart updated. New state is ORDER_TYPE. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "That's great. Pickup or delivery?"
+            },
+            {
+                "role": "user",
+                "content": "i want to place an order"
+            },
+            {
+                "role": "assistant",
+                "content": "You're ordering, that's great. Pickup or delivery?"
+            },
+            {
+                "role": "user",
+                "content": "delivery"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "gg1xe6njm",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"next_state\":\"ITEM_COLLECTION\",\"order_type\":\"delivery\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "gg1xe6njm",
+                "content": "Cart updated. New state is ITEM_COLLECTION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "What can I get for you?"
+            },
+            {
+                "role": "user",
+                "content": "i want the vdp to come up"
+            },
+            {
+                "role": "assistant",
+                "content": "You want the Veggie Deluxe Pizza, got it. What size?"
+            },
+            {
+                "role": "user",
+                "content": "small"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "v2mdg671s",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"items\":[{\"name\":\"Veggie Supreme\",\"quantity\":1,\"size\":\"Small\"}],\"next_state\":\"ITEM_COLLECTION\",\"order_type\":\"delivery\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "v2mdg671s",
+                "content": "Cart updated. New state is ITEM_COLLECTION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "You're getting a Small Veggie Supreme. Anything else?"
+            },
+            {
+                "role": "user",
+                "content": "what do you have"
+            },
+            {
+                "role": "assistant",
+                "content": "We've got Margherita, Pepperoni Feast, Veggie Supreme, Meat Lovers, and BBQ Chicken Pizza. Which one?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time."
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Are you still there?"
+            },
+            {
+                "role": "user",
+                "content": "you have been"
+            },
+            {
+                "role": "assistant",
+                "content": "You've been looking at our menu, what catches your eye?"
+            },
+            {
+                "role": "user",
+                "content": "what do you have in your name"
+            },
+            {
+                "role": "assistant",
+                "content": "We're PizzaBurg, so we've got lots of pizzas. Want to try one?"
+            },
+            {
+                "role": "user",
+                "content": "yeah one bbq chicken pot and one pepperoni"
+            },
+            {
+                "role": "user",
+                "content": "one dbt chicken plus thirty one six hundred"
+            },
+            {
+                "role": "user",
+                "content": "one b b b ticket is up"
+            },
+            {
+                "role": "user",
+                "content": "thank you"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-22T17:29:03.880559",
+        "session_id": "1a8378fd-9dc0-4123-b096-1c3cd0fdcc3a",
+        "caller_number": "+12295080565",
+        "call_sid": "CA1d66fba4d731ec82a9fc5c374c98fcad",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time, I'm here to help."
+            },
+            {
+                "role": "user",
+                "content": "i want to make an order"
+            },
+            {
+                "role": "assistant",
+                "content": "Awesome, thanks for choosing PizzaBurg. Pickup or delivery today?"
+            },
+            {
+                "role": "user",
+                "content": "delivery"
+            },
+            {
+                "role": "assistant",
+                "content": "So delivery it is. What's the address you'd like to have your order delivered to?"
+            },
+            {
+                "role": "user",
+                "content": "one two three main road"
+            },
+            {
+                "role": "assistant",
+                "content": "So one two three main road, got it. Now, what kind of order would you like to place? A pizza, some sides, or maybe a combo?"
+            },
+            {
+                "role": "user",
+                "content": "combo"
+            },
+            {
+                "role": "assistant",
+                "content": "A combo sounds like a great idea. Do you want a pizza, some sides, and a drink, or just a pizza and a drink?"
+            },
+            {
+                "role": "user",
+                "content": "a pizza and a drink"
+            },
+            {
+                "role": "assistant",
+                "content": "So just a pizza and a drink. What kind of pizza would you like to order?"
+            },
+            {
+                "role": "user",
+                "content": "a bbc chicken wings"
+            },
+            {
+                "role": "assistant",
+                "content": "I think you meant to say BBQ Chicken Pizza, right? And you'd also like to order some Hot Wings. Is that correct?"
+            },
+            {
+                "role": "user",
+                "content": "yes"
+            },
+            {
+                "role": "assistant",
+                "content": "So to recap, you'd like to order a BBQ Chicken Pizza and a side of Hot Wings. And to drink?"
+            },
+            {
+                "role": "user",
+                "content": "wait i want to add some add ons on pizza"
+            },
+            {
+                "role": "assistant",
+                "content": "No problem, changing it to a BBQ Chicken Pizza with add-ons. What toppings would you like to add to your pizza?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time, I'm still here."
+            },
+            {
+                "role": "user",
+                "content": "it's thirteen"
+            },
+            {
+                "role": "assistant",
+                "content": "You're still there. What was I saying? Ah yes, toppings for your BBQ Chicken Pizza. What would you like to add?"
+            },
+            {
+                "role": "user",
+                "content": "i will go for extra cheese"
+            },
+            {
+                "role": "assistant",
+                "content": "Extra cheese sounds great. And would you like to keep the Hot Wings as is, or make any changes to that order?"
+            },
+            {
+                "role": "user",
+                "content": "yes"
+            },
+            {
+                "role": "assistant",
+                "content": "So to recap, you'd like a BBQ Chicken Pizza with extra cheese and a side of Hot Wings. Now, let's talk about your drink. What can I get for you?"
+            },
+            {
+                "role": "user",
+                "content": "no change in me"
+            },
+            {
+                "role": "assistant",
+                "content": "So you'd like to stick with your original drink choice. I'll just confirm your order then. You'd like to place a delivery order for a BBQ Chicken Pizza with extra cheese, a side of Hot Wings, and a drink, correct?"
+            },
+            {
+                "role": "user",
+                "content": "yes"
+            },
+            {
+                "role": "assistant",
+                "content": "I'll go ahead and put that in for you. We'll get your order ready for delivery to one two three main road. I'll just update the cart and state real quick. <function=update_cart_and_state>{\"order_type\": \"delivery\",\"items\": [{\"crust\": \"Regular Crust\",\"extra_cheese\": true,\"half_half\": \"\",\"name\": \"BBQ Chicken Pizza\",\"quantity\": 1,\"size\": \"Medium\",\"toppings_added\": [\"Extra Cheese\"],\"toppings_removed\": [],\"type\": \"pizza\"}],\"next_state\": \"ORDER_REVIEW\",\"address\": \"one two three main road\"} </function>"
+            },
+            {
+                "role": "user",
+                "content": "okay thank you"
+            },
+            {
+                "role": "assistant",
+                "content": "You're welcome! I'll just review your order with you real quick to make sure everything is correct. <function=update_cart_and_state>{\"next_state\": \"ORDER_REVIEW\"} </function>"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-04-22T17:52:43.542480",
+        "session_id": "472c6960-e867-47ee-9691-7ee72cc3c602",
+        "caller_number": "+12295080565",
+        "call_sid": "CA9295c136b168aabac77b2aaebc8c90fd",
+        "confirmed": false,
+        "final_order": null,
+        "transcript": [
+            {
+                "role": "user",
+                "content": "Hello."
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks for calling PizzaBurg, pickup or delivery today?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time."
+            },
+            {
+                "role": "user",
+                "content": "i want to place an order"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "zw16dyfky",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"next_state\":\"ORDER_TYPE\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "zw16dyfky",
+                "content": "Cart updated. New state is ORDER_TYPE. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "You're ordering, pickup or delivery?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time."
+            },
+            {
+                "role": "user",
+                "content": "i want to make a delivery"
+            },
+            {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                    {
+                        "id": "q6haqpfba",
+                        "type": "function",
+                        "function": {
+                            "name": "update_cart_and_state",
+                            "arguments": "{\"next_state\":\"ITEM_COLLECTION\",\"order_type\":\"delivery\"}"
+                        }
+                    }
+                ]
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "q6haqpfba",
+                "content": "Cart updated. New state is ITEM_COLLECTION. Please say your short conversational response."
+            },
+            {
+                "role": "assistant",
+                "content": "What can I get for you?"
+            },
+            {
+                "role": "user",
+                "content": "i want bbc speaker"
+            },
+            {
+                "role": "assistant",
+                "content": "We don't have BBC speakers on our menu. We have pizzas, sides, drinks, and desserts. What sounds good?"
+            },
+            {
+                "role": "user",
+                "content": "hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Take your time."
+            }
+        ]
     }
 ]

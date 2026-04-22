@@ -31,7 +31,7 @@ class CallOrchestrator:
         
         import asyncio
         # Wait 1.5 seconds so the cell network has time to connect before AI starts talking
-        await asyncio.sleep(1.5)
+        await asyncio.sleep(0.05)
         
         # Initial greeting from the AI to kick off the call
         await self.trigger_ai_response("Hello.")
@@ -64,6 +64,11 @@ class CallOrchestrator:
     async def on_transcript_received(self, text: str):
         logger.info(f"Caller Said: {text}")
         
+        # Guard against micro-transcripts (like throat clears or noise) triggering the AI
+        if len(text.strip()) < 2:
+            logger.info("Ignoring micro-transcript.")
+            return
+            
         # If AI is generating, cancel it and restart with the new final speech
         if self.active_ai_task and not self.active_ai_task.done():
             self.active_ai_task.cancel()
