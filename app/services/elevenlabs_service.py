@@ -26,7 +26,7 @@ class ElevenLabsService:
         if self.active_websocket is not None:
             return # Already prewarmed
             
-        uri = f"wss://api.elevenlabs.io/v1/text-to-speech/{self.voice_id}/stream-input?model_id=eleven_turbo_v2_5&output_format=ulaw_8000&optimize_streaming_latency=4"
+        uri = f"wss://api.elevenlabs.io/v1/text-to-speech/{self.voice_id}/stream-input?model_id=eleven_turbo_v2_5&output_format=ulaw_8000&optimize_streaming_latency=3"
         try:
             logger.info("ElevenLabs: Pre-warming WebSocket connection...")
             self.active_websocket = await websockets.connect(uri)
@@ -40,7 +40,7 @@ class ElevenLabsService:
         Connects to ElevenLabs WebSocket API, streams text tokens, receives audio chunks, 
         and routes them to the callback concurrently.
         """
-        uri = f"wss://api.elevenlabs.io/v1/text-to-speech/{self.voice_id}/stream-input?model_id=eleven_turbo_v2_5&output_format=ulaw_8000&optimize_streaming_latency=4"
+        uri = f"wss://api.elevenlabs.io/v1/text-to-speech/{self.voice_id}/stream-input?model_id=eleven_turbo_v2_5&output_format=ulaw_8000&optimize_streaming_latency=3"
         
         # Determine whether to use pre-warmed socket or create a new one
         if self.active_websocket is not None:

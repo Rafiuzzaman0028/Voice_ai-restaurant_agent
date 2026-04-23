@@ -27,6 +27,8 @@ class OpenAIService:
         6. Always reply gracefully to interruptions or corrections (e.g., "Actually make that medium" -> "No problem, changing it to medium").
         7. If uncertain or no input is heard, say "Take your time" or "Are you still there?".
         8. CRITICAL: NEVER write raw JSON, XML, or <function> tags in your conversational output. If you need to update the cart, use the proper function calling API invisibly.
+        9. You are multi-lingual. If the caller speaks Danish, respond naturally in Danish.
+        10. CRITICAL: If you use the 'update_cart_and_state' tool, you MUST simultaneously provide your natural language conversational response to the user in the same turn. Do not stay silent.
         
         MENU:
         {menu}
@@ -56,9 +58,9 @@ class OpenAIService:
         elif state.stage == ConversationState.ITEM_CUSTOMIZATION:
             state_instructions = "Objective: Ask ONLY for required missing modifiers (size, crust) for items in the cart. One question at a time. Do NOT ask flavor if they gave it."
         elif state.stage == ConversationState.UPSELL:
-            state_instructions = "Objective: Soft, natural upsell. 'Would you like any drinks or sides with that?' Do not be aggressive. If they say no, move to ADDRESS_COLLECTION or ORDER_REVIEW."
+            state_instructions = "Objective: Soft, natural upsell. 'Would you like any drinks or sides with that?' Do not be aggressive. When done, move to ADDRESS_COLLECTION."
         elif state.stage == ConversationState.ADDRESS_COLLECTION:
-            state_instructions = "Objective: Collect the full delivery address. If order type is pickup, silently advance to ORDER_REVIEW."
+            state_instructions = "Objective: Collect the customer's name. If order type is delivery, collect the full address as well. If it's pickup, just the name is enough. Once collected, advance to ORDER_REVIEW."
         elif state.stage == ConversationState.ORDER_REVIEW:
             state_instructions = "Objective: Summarize the complete order clearly. 'Let me confirm: one large pepperoni pizza, regular crust... Is that all correct?' If they confirm, transition to CONFIRMATION."
         elif state.stage == ConversationState.CONFIRMATION:
@@ -102,6 +104,7 @@ class OpenAIService:
                         "type": "object",
                         "properties": {
                             "order_type": {"type": "string", "enum": ["pickup", "delivery", "dine-in"]},
+                            "customer_name": {"type": "string"},
                             "address": {"type": "string"},
                             "next_state": {"type": "string", "enum": [e.value for e in ConversationState]},
                             "items": {
@@ -132,11 +135,11 @@ class OpenAIService:
             start_time = time.time()
             logger.info(f"Starting OpenAI request... [State: {state.stage.value}]")
             response_stream = await client.chat.completions.create(
-                model="llama-3.1-8b-instant",
-#                model="llama-3.3-70b-versatile",
+#                model="llama-3.1-8b-instant",
+                model="llama-3.3-70b-versatile",
                 messages=messages,
                 tools=tools,
-                temperature=0.3, # keep deterministic state handling
+                temperature=0.4, # keep deterministic state handling
                 max_tokens=150,
                 stream=True
             )
@@ -174,6 +177,9 @@ class OpenAIService:
                     state.add_transcript("assistant", full_response_content)
                 raise
             
+            if full_response_content:
+                logger.info(f"AI Said: {full_response_content.strip()}")
+
             if has_tool_call:
                 if tool_call_buffer["name"] == "update_cart_and_state":
                     args_str = tool_call_buffer["arguments"]
@@ -190,6 +196,8 @@ class OpenAIService:
                                 
                         if "order_type" in args:
                             state.order_details.type = args["order_type"]
+                        if "customer_name" in args:
+                            state.order_details.customer_name = args["customer_name"]
                         if "address" in args:
                             state.order_details.address = args["address"]
                         if "items" in args:
@@ -213,43 +221,23 @@ class OpenAIService:
                         }
                     }
                     
-                    # We inject the tool result and get the AI to actually speak if it didn't already
-                    state.transcript_history.append({"role": "assistant", "content": None, "tool_calls": [tool_call_dict]})
-                    state.transcript_history.append({"role": "tool", "tool_call_id": tool_call_buffer["id"], "content": f"Cart updated. New state is {state.stage.value}. Please say your short conversational response."})
+                    # Store both the assistant's response (which now includes the spoken text) AND the tool call
+                    state.transcript_history.append({
+                        "role": "assistant",
+                        "content": full_response_content if full_response_content else None,
+                        "tool_calls": [tool_call_dict]
+                    })
                     
-                    messages = [{"role": "system", "content": OpenAIService._generate_system_prompt(state, menu_json)}] + state.transcript_history
+                    # Store the simulated tool success so the AI knows the cart updated properly
+                    state.transcript_history.append({
+                        "role": "tool",
+                        "tool_call_id": tool_call_buffer["id"],
+                        "content": f"Cart updated successfully. New state is {state.stage.value}."
+                    })
                     
-                    second_stream = await client.chat.completions.create(
-                        model="llama-3.1-8b-instant",
-#                        model="llama-3.3-70b-versatile",
-
-                        messages=messages,
-                        temperature=0.4,
-                        max_tokens=150,
-                        stream=True
-                    )
-                    
-                    second_response_content = ""
-                    try:
-                        async for chunk in second_stream:
-                            if len(chunk.choices) == 0:
-                                continue
-                            delta = chunk.choices[0].delta
-                            if delta.content:
-                                second_response_content += delta.content
-                                yield delta.content
-                    except asyncio.CancelledError:
-                        if second_response_content:
-                            state.add_transcript("assistant", second_response_content)
-                        raise
-                            
-                    if second_response_content:
-                        logger.info(f"AI Said (Post-Tool): {second_response_content.strip()}")
-                        state.add_transcript("assistant", second_response_content)
                 return
                 
             if full_response_content:
-                logger.info(f"AI Said: {full_response_content.strip()}")
                 state.add_transcript("assistant", full_response_content)
             elif not has_tool_call:
                 yield "Got it."

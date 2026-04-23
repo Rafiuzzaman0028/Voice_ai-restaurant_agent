@@ -25,11 +25,13 @@ class OrderItem(BaseModel):
     toppings_removed: List[str] = Field(default_factory=list, description="Toppings asked to be removed")
 
 class OrderDetails(BaseModel):
+    customer_name: Optional[str] = Field(default=None, description="Name of the customer")
     items: List[OrderItem] = Field(default_factory=list)
     type: Optional[Literal["pickup", "delivery", "dine-in"]] = None
     address: Optional[str] = Field(default=None, description="Full delivery address including apartment/unit/landmark if collected")
 
 class FinalOrder(BaseModel):
+    customer_name: str = Field(default="Unknown", description="Name of the customer")
     customer_phone: str
     items: List[OrderItem]
     type: str
