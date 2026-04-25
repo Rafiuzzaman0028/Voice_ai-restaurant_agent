@@ -1,7 +1,7 @@
 import os
 from fastapi import FastAPI
 from dotenv import load_dotenv
-from app.routes import voice, websocket, menu, chat_test
+from app.routes import voice, websocket, menu, chat_test, orders
 from app.core.logger import get_logger
 
 # Load environment variables
@@ -20,6 +20,7 @@ app.include_router(voice.router)
 app.include_router(websocket.router)
 app.include_router(menu.router)
 app.include_router(chat_test.router)
+app.include_router(orders.router)
 
 @app.get("/")
 def health_check():

@@ -26,3 +26,43 @@ Drinks:
 Desserts:
 - Chocolate Lava Cake: $6
 - Tiramisu: $7
+
+# Project Handoff: Voice AI Restaurant SaaS
+
+## 1. Context & Background
+We have successfully built a production-ready MVP for an ultra-low latency Voice AI restaurant ordering system. The core voice engine is built and highly optimized. The goal now is to take this single-tenant MVP "engine" and wrap it in a multi-tenant SaaS "chassis" so multiple restaurants can sign up, buy a Twilio number, and use the AI.
+
+## 2. Current MVP Architecture (What is already built & working)
+- **Framework:** Python FastAPI.
+- **Telephony:** Twilio Media WebSockets (Bi-directional audio streaming).
+- **Speech-to-Text (STT):** Deepgram (Streaming `listen` API).
+- **Text-to-Speech (TTS):** ElevenLabs Turbo v2.5 (`eleven_turbo_v2_5`) via WebSockets (pre-warmed for 0ms handshake latency). natively supports 32 languages including Danish.
+- **LLM Intelligence:** Groq LPUs running `llama-3.3-70b-versatile` using the official OpenAI Python library (`AsyncOpenAI` with Groq `base_url`).
+
+### Key Innovations in the MVP
+1. **Single LLM Flow (Ultra-Low Latency):** We bypassed the traditional ReAct double-LLM loop. The LLM is instructed to output JSON tool calls (to update the cart state) and natural language text *simultaneously in the same stream*. The text is piped instantly to ElevenLabs, bringing end-to-end latency down to ~600-800ms.
+2. **Deterministic State Machine:** The AI relies on a strict conversational state machine (Greeting -> Order Type -> Item Collection -> Customization -> Upsell -> Name/Address -> Review -> Confirmation) to prevent hallucinations and strictly control the conversation flow.
+3. **Barge-in Handling:** If the user interrupts, the Twilio audio buffer is cleared via a `clear` event, and the ElevenLabs generation task is instantly cancelled.
+4. **Dynamic AI Menus:** A `/menu/upload` endpoint processes PDF menus via `gpt-4o-mini`, converts them to structured JSON, and injects them dynamically into the LLM system prompt.
+
+## 3. The Goal: Multi-Tenant SaaS Transition
+The AI engine is flawless, but the data architecture currently assumes a single global restaurant. We need to upgrade the data architecture to support multiple tenants (restaurants). 
+
+### Required Action Items for SaaS Transition:
+
+**Phase 1: Database & Tenant Mapping**
+1. **Implement PostgreSQL:** Replace local JSON files (`saved_orders.json`) and in-memory stores (`global_store`) with a real relational database (e.g., SQLAlchemy + Postgres).
+2. **Create Restaurant Profiles:** Build a `restaurants` table that stores:
+   - `restaurant_id`
+   - `name` (e.g., Luigi's Pizzeria)
+   - `twilio_phone_number` (The `To` number dialed by the customer)
+   - `elevenlabs_voice_id` (Custom voice per restaurant)
+   - `menu_json` (The structured menu payload)
+3. **Dynamic Tenant Routing:** Update the Twilio Webhook endpoint. When a call comes in, extract the `To` phone number, query the database, and load the specific Restaurant Profile into the session state.
+
+**Phase 2: Dynamic Prompting & Orders**
+4. **Dynamic System Prompts:** Remove hardcoded references (like "PizzaBurg") from the OpenAI system prompt. Inject the `{restaurant.name}` and `{restaurant.menu_json}` dynamically based on the active tenant.
+5. **Multi-Tenant Order Storage:** Update the `FinalOrder` model to include `restaurant_id`. When an order hits the `CONFIRMATION` stage, save it to the database linked to the specific restaurant.
+6. **Order Webhooks (Optional but recommended):** When an order is confirmed, add logic to fire a webhook to the restaurant's POS system or display it on a frontend dashboard.
+
+**Objective:** Please analyze this architecture and provide a step-by-step implementation plan to execute the SaaS Transition Phase.

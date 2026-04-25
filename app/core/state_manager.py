@@ -37,8 +37,8 @@ class StateManager:
             import os
             from datetime import datetime
             
-                
             try:
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
                 log_entry = {
                     "timestamp": datetime.now().isoformat(),
                     "session_id": session_id,
@@ -49,22 +49,16 @@ class StateManager:
                     "transcript": session.transcript_history
                 }
                 
-                file_path = "saved_orders.json"
-                saved_data = []
+                # Ensure the saved_orders directory exists
+                os.makedirs("saved_orders", exist_ok=True)
                 
-                # Load existing array if the file exists
-                if os.path.exists(file_path):
-                    try:
-                        with open(file_path, "r", encoding="utf-8") as f:
-                            saved_data = json.load(f)
-                    except json.JSONDecodeError:
-                        pass # if it's empty or corrupt, start fresh
-                        
-                saved_data.append(log_entry)
+                # Create a specific file for this session
+                file_name = f"order_{timestamp}_{session_id}.json"
+                file_path = os.path.join("saved_orders", file_name)
                 
-                # Write back pretty-printed structured JSON
+                # Write pretty-printed structured JSON for the single order
                 with open(file_path, "w", encoding="utf-8") as f:
-                    json.dump(saved_data, f, indent=4)
+                    json.dump(log_entry, f, indent=4)
                     
             except Exception as e:
                 print(f"Error saving session log: {e}")
